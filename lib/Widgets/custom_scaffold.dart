@@ -15,8 +15,9 @@ class CustomScaffoldFirst extends StatelessWidget {
         ? MediaQuery.of(context).size.width * 0.08
         : MediaQuery.of(context).size.width * 0.3;
 
+    var textTheme=Theme.of(context).textTheme;
+
     return Scaffold(
-      backgroundColor: CustomAppColors.blackColor,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
@@ -38,6 +39,37 @@ class CustomScaffoldFirst extends StatelessWidget {
                   ),
                 ),
               ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'By continuing, you agree to our\n',
+                        style:textTheme.bodySmall!.copyWith(color: CustomAppColors.greyColor)
+                      ),
+                      TextSpan(
+                        text: 'User Agreement',
+                        style:textTheme.bodySmall
+                      ),
+                      TextSpan(
+                        text: ' and ',
+                          style:textTheme.bodySmall!.copyWith(color: CustomAppColors.greyColor)
+                      ),
+                      TextSpan(
+                        text: 'Privacy Policy',
+                          style:textTheme.bodySmall!
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
             ],
           ),
         ),
