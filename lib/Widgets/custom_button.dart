@@ -29,6 +29,7 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
+
         minWidth: widget.width ?? double.infinity,
       ),
       child: ElevatedButton(
